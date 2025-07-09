@@ -1,0 +1,14 @@
+Executive Gents Dollhouse - SEO & Traffic Checklist
+
+1. Remove duplicate meta descriptions (keep only one, make it unique and keyword-rich).
+2. Add alt text to all images and video posters.
+3. Add structured data (JSON-LD) for LocalBusiness.
+4. Add Open Graph and Twitter Card tags (already present, but review for accuracy).
+5. Add a blog section for content marketing (optional, not implemented here).
+6. Register on Google My Business and local directories (manual step).
+7. Encourage reviews and testimonials (add a section or call-to-action).
+8. Share on social media and collaborate with influencers (manual step).
+
+---
+
+This checklist is for your reference. The following code changes will address points 1–3.

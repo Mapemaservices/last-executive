@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Gents Dollhouse - Luxury Spa & Wellness</title>
+    <meta name="description" content="Experience pure relaxation and blissful tranquility at Executive Gents Dollhouse. Premium spa services including tantric, holistic treatments, and wellness services.">
+    <meta name="keywords" content="luxury spa, wellness, massage, tantric, holistic, facial, Nairobi">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4E4A6;
+            --gold-dark: #B8941F;
+            --white: #ffffff;
+            --black: #1a1a1a;
+            --gray: #6b7280;
+            --gray-light: #f8fafc;
+            --whatsapp: #25D366;
+            --gmail: #EA4335;
+            --phone: #007bff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .book-btn {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .book-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--gold);
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 255, 255, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23D4AF37;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23D4AF37;stop-opacity:0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>');
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--gold);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--gray-light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .mission-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--gold);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-category {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--gold);
+        }
+
+        .service-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-category h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .service-item:last-child {
+            border-bottom: none;
+        }
+
+        .service-price {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* Statistics Section */
+        .stats {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--gray-light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: var(--gold-light);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--gold);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Reviews Section */
+        .reviews-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .review-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 0 1rem;
+        }
+
+        .review-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .review-author {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .stars {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        /* Booking Form */
+        .booking {
+            background: var(--gray-light);
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e5e5;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--black);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .newsletter-form button {
+            background: var(--gold);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Floating Action Buttons */
+        .fab-container {
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .fab {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .fab-whatsapp {
+            background: var(--whatsapp);
+        }
+
+        .fab-gmail {
+            background: var(--gmail);
+        }
+
+        .fab-phone {
+            background: var(--phone);
+        }
+
+        .fab-label {
+            position: absolute;
+            right: 70px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .fab:hover .fab-label {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: right 0.3s ease;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .fab-container {
+                right: 1rem;
+                bottom: 1rem;
+            }
+
+            .fab {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Success/Error Messages */
+        .message {
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Executive Gents</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#booking" class="book-btn">Book Now</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Executive Gents Dollhouse</h1>
+            <p>Let us guide you to a world of pure relaxation and blissful tranquility.</p>
+            <a href="#booking" class="cta-btn">Book Your Experience</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Us</h2>
+            <div class="about-content">
+                <div data-aos="fade-right">
+                    <h3 style="color: var(--gold); margin-bottom: 1rem;">Welcome to Luxury</h3>
+                    <p class="about-text">
+                        At Executive Gents Dollhouse, we redefine the spa experience with our commitment to excellence and innovation. Our sanctuary of wellness combines traditional healing practices with modern luxury to create an unforgettable journey of relaxation and rejuvenation.
+                    </p>
+                    <p class="about-text">
+                        Every detail has been carefully crafted to ensure your comfort and satisfaction, from our premium facilities to our expertly trained professionals who are dedicated to your well-being.
+                    </p>
+                </div>
+                <div class="mission-box" data-aos="fade-left">
+                    <h3 style="color: var(--gold); margin-bottom: 1rem;">Our Mission</h3>
+                    <p>To continuously innovate and elevate our spa offerings, staying at the forefront of wellness trends and providing cutting-edge treatments that exceed our clients' expectations while maintaining the highest standards of luxury and professionalism.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Premium Services</h2>
+            <p class="section-subtitle" data-aos="fade-up">Discover our comprehensive range of luxury treatments designed to rejuvenate your body, mind, and spirit.</p>
+            
+            <div class="services-grid">
+                <div class="service-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3><i class="fas fa-leaf"></i> Holistic Treatments</h3>
+                    <div class="service-item">
+                        <span>Aromatherapy Session</span>
+                        <span class="service-price">KSH 4,500</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Hot Stone Therapy</span>
+                        <span class="service-price">KSH 5,200</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Crystal Healing</span>
+                        <span class="service-price">KSH 3,800</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Energy Balancing</span>
+                        <span class="service-price">KSH 4,000</span>
+                    </div>
+                </div>
+
+                <div class="service-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3><i class="fas fa-spa"></i> Tantric Services</h3>
+                    <div class="service-item">
+                        <span>Tantric Massage (60min)</span>
+                        <span class="service-price">KSH 6,000</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Tantric Massage (90min)</span>
+                        <span class="service-price">KSH 8,500</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Couples Tantric Session</span>
+                        <span class="service-price">KSH 12,000</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Extended Tantric Experience</span>
+                        <span class="service-price">KSH 10,500</span>
+                    </div>
+                </div>
+
+                <div class="service-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3><i class="fas fa-hands"></i> Body Treatments</h3>
+                    <div class="service-item">
+                        <span>Swedish Massage</span>
+                        <span class="service-price">KSH 3,500</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Deep Tissue Massage</span>
+                        <span class="service-price">KSH 4,200</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Full Body Scrub</span>
+                        <span class="service-price">KSH 3,200</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Body Wrap Treatment</span>
+                        <span class="service-price">KSH 4,800</span>
+                    </div>
+                </div>
+
+                <div class="service-category" data-aos="fade-up" data-aos-delay="400">
+                    <h3><i class="fas fa-user-circle"></i> Facial Treatments</h3>
+                    <div class="service-item">
+                        <span>Classic Facial</span>
+                        <span class="service-price">KSH 2,800</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Anti-Aging Facial</span>
+                        <span class="service-price">KSH 4,500</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Hydrating Treatment</span>
+                        <span class="service-price">KSH 3,500</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Gold Facial Luxury</span>
+                        <span class="service-price">KSH 6,500</span>
+                    </div>
+                </div>
+
+                <div class="service-category" data-aos="fade-up" data-aos-delay="500">
+                    <h3><i class="fas fa-cut"></i> Waxing Services</h3>
+                    <div class="service-item">
+                        <span>Full Body Waxing</span>
+                        <span class="service-price">KSH 3,800</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Chest & Back</span>
+                        <span class="service-price">KSH 2,200</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Arms & Legs</span>
+                        <span class="service-price">KSH 2,800</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Intimate Waxing</span>
+                        <span class="service-price">KSH 2,500</span>
+                    </div>
+                </div>
+
+                <div class="service-category" data-aos="fade-up" data-aos-delay="600">
+                    <h3><i class="fas fa-hand-paper"></i> Hand & Foot Care</h3>
+                    <div class="service-item">
+                        <span>Executive Pedicure</span>
+                        <span class="service-price">KSH 2,200</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Luxury Manicure</span>
+                        <span class="service-price">KSH 1,800</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Mani-Pedi Combo</span>
+                        <span class="service-price">KSH 3,500</span>
+                    </div>
+                    <div class="service-item">
+                        <span>Therapeutic Foot Massage</span>
+                        <span class="service-price">KSH 2,500</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section stats">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" style="color: white;">Wellness by the Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number" data-count="620">0</div>
+                    <div class="stat-label">Tantric Services</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number" data-count="320">0</div>
+                    <div class="stat-label">Swedish Massages</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number" data-count="300">0</div>
+                    <div class="stat-label">Deep Tissue Massages</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-number" data-count="220">0</div>
+                    <div class="stat-label">Facial Treatments</div>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="stat-number" data-count="239">0</div>
+                    <div class="stat-label">Body Scrubs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Luxury Gallery</h2>
+            <p class="section-subtitle" data-aos="fade-up">Take a glimpse into our world of luxury and tranquility</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100" onclick="openModal('gallery1')">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200" onclick="openModal('gallery2')">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300" onclick="openModal('gallery3')">
+                    <i class="fas fa-hands"></i>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400" onclick="openModal('gallery4')">
+                    <i class="fas fa-candle-holder"></i>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="500" onclick="openModal('gallery5')">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="600" onclick="openModal('gallery6')">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2>
+            <div class="reviews-container">
+                <div class="review-item" data-aos="fade-up">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Absolutely exceptional service! The tantric massage was a transformative experience. The ambiance, professionalism, and attention to detail exceeded all my expectations. I've never felt more relaxed and rejuvenated."</p>
+                    <p class="review-author">— Michael K.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="section booking">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Book Your Experience</h2>
+            <p class="section-subtitle" data-aos="fade-up">Reserve your moment of pure bliss and tranquility</p>
+            
+            <form class="booking-form" data-aos="fade-up" onsubmit="submitBooking(event)">
+                <div id="form-message" class="message"></div>
+                
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div id="service-display" style="margin-top: 20px;">
+    <h3 id="service-title"></h3>
+    <img id="service-image" src="" alt="Service Image" style="max-width: 100%; height: auto; display:none;">
+    <video id="service-video" controls style="max-width: 100%; display:none;">
+        <source id="video-source" src="" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <p id="service-description" style="margin-top: 10px;"></p>
+</div>
+
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Preferred Date *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time *</label>
+                        <select id="time" name="time" required>
+                            <option value="">Select time...</option>
+                            <option value="9:00 AM">9:00 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                            <option value="4:00 PM">4:00 PM</option>
+                            <option value="5:00 PM">5:00 PM</option>
+                            <option value="6:00 PM">6:00 PM</option>
+                            <option value="7:00 PM">7:00 PM</option>
+                            <option value="8:00 PM">8:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Special Requests or Notes</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Any special requirements or preferences..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Book My Experience</span>
+                    <span class="btn-loading" style="display: none;"><span class="loading"></span> Booking...</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            <div class="contact-info" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <div style="background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);" data-aos="fade-up">
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: var(--gold); margin-bottom: 1rem;"><i class="fas fa-map-marker-alt"></i> Location</h3>
+                        <p>Dhanjay Apartments, House 305<br>Nairobi, Kenya</p>
+                    </div>
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="color: var(--gold); margin-bottom: 1rem;"><i class="fas fa-phone"></i> Phone</h3>
+                        <p><a href="tel:+254111500150" style="color: var(--black); text-decoration: none;">+254 111 500 150</a></p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--gold); margin-bottom: 1rem;"><i class="fas fa-envelope"></i> Email</h3>
+                        <p><a href="mailto:info@thegentsdollhouse.co.ke" style="color: var(--black); text-decoration: none;">info@thegentsdollhouse.co.ke</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Executive Gents Dollhouse</h3>
+                    <p>Your premier destination for luxury spa treatments and wellness experiences in Nairobi. We provide exceptional service in a tranquil and sophisticated environment.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#home">Home</a></p>
+                    <p><a href="#about">About Us</a></p>
+                    <p><a href="#services">Services</a></p>
+                    <p><a href="#gallery">Gallery</a></p>
+                    <p><a href="#reviews">Reviews</a></p>
+                    <p><a href="#booking">Book Now</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Dhanjay Apartments, House 305</p>
+                    <p><i class="fas fa-phone"></i> +254 111 500 150</p>
+                    <p><i class="fas fa-envelope"></i> info@thegentsdollhouse.co.ke</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to receive exclusive offers and wellness tips.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <h4 style="color: var(--gold); margin-bottom: 1rem;">Download Our App</h4>
+                        <button style="background: var(--gold); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600;">
+                            <i class="fas fa-mobile-alt"></i> Get the App
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Executive Gents Dollhouse. All rights reserved. | Designed with luxury in mind.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <a href="https://wa.me/254111500150" class="fab fab-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="fab-label">WhatsApp Chat</span>
+        </a>
+        <a href="mailto:info@thegentsdollhouse.co.ke" class="fab fab-gmail">
+            <i class="fas fa-envelope"></i>
+            <span class="fab-label">Send Email</span>
+        </a>
+        <a href="tel:+254111500150" class="fab fab-phone">
+            <i class="fas fa-phone"></i>
+            <span class="fab-label">Call Now</span>
+        </a>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 2000; display: flex; align-items: center; justify-content: center;" onclick="closeModal()">
+        <div style="background: white; padding: 2rem; border-radius: 15px; max-width: 80%; max-height: 80%; display: flex; flex-direction: column; align-items: center;">
+            <h3 style="color: var(--gold); margin-bottom: 1rem;">Luxury Spa Experience</h3>
+            <div style="width: 300px; height: 300px; background: var(--gold-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--gold);">
+                <i class="fas fa-spa"></i>
+            </div>
+            <p style="margin-top: 1rem; text-align: center; color: var(--gray);">Experience the ultimate in luxury and relaxation at Executive Gents Dollhouse</p>
+            <button onclick="closeModal()" style="margin-top: 1rem; background: var(--gold); color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer;">Close</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Animated counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-count');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // Intersection Observer for counters
+        const statsSection = document.querySelector('.stats');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Gallery modal functions
+        function openModal(imageId) {
+            const modal = document.getElementById('gallery-modal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('gallery-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Set minimum date to today
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+
+        // Telegram Bot Configuration
+        const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE'; // Replace with your actual bot token
+        const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID_HERE'; // Replace with your chat ID
+
+        // Form submission
+        async function submitBooking(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            const submitBtn = form.querySelector('.submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            const messageDiv = document.getElementById('form-message');
+
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-flex';
+            submitBtn.disabled = true;
+
+            // Prepare message for Telegram
+            const message = `
+🌟 *New Booking from Executive Gents Dollhouse* 🌟
+
+👤 *Name:* ${formData.get('name')}
+📧 *Email:* ${formData.get('email')}
+📱 *Phone:* ${formData.get('phone')}
+💆 *Service:* ${formData.get('service')}
+📅 *Date:* ${formData.get('date')}
+🕐 *Time:* ${formData.get('time')}
+💬 *Message:* ${formData.get('message') || 'No special requests'}
+
+---
+*Please confirm this booking at your earliest convenience.*
+            `.trim();
+
+            try {
+                // For demo purposes, we'll simulate the API call
+                // In a real implementation, you would send to Telegram API
+                await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate API delay
+                
+                // Simulate success (replace with actual Telegram API call)
+                const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+                
+                // Uncomment and modify this section when you have your bot token
+                /*
+                const response = await fetch(telegramUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'Markdown'
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to send booking');
+                }
+                */
+
+                // Show success message
+                showMessage('success', 'Booking submitted successfully! We will contact you shortly to confirm your appointment.');
+                form.reset();
+
+            } catch (error) {
+                console.error('Booking error:', error);
+                showMessage('error', 'There was an error submitting your booking. Please try again or contact us directly.');
+            } finally {
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        }
+
+        function showMessage(type, text) {
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.className = `message ${type} show`;
+            messageDiv.textContent = text;
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                messageDiv.classList.remove('show');
+            }, 5000);
+        }
+
+        // Newsletter subscription
+        document.querySelector('.newsletter-form button').addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = this.previousElementSibling.value;
+            if (email) {
+                alert('Thank you for subscribing to our newsletter!');
+                this.previousElementSibling.value = '';
+            }
+        });
+
+        // App download button
+        document.querySelector('.footer-section button').addEventListener('click', function() {
+            alert('Our mobile app is coming soon! Stay tuned for updates.');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Reviews carousel (simple implementation)
+        const reviews = [
+            {
+                text: "Absolutely exceptional service! The tantric massage was a transformative experience. The ambiance, professionalism, and attention to detail exceeded all my expectations. I've never felt more relaxed and rejuvenated.",
+                author: "Michael K."
+            },
+            {
+                text: "The holistic treatments here are incredible. The aromatherapy session combined with the hot stone therapy was pure bliss. The staff is highly skilled and the environment is so peaceful.",
+                author: "David M."
+            },
+            {
+                text: "I've been to many spas, but Executive Gents Dollhouse is in a league of its own. The gold facial luxury treatment was amazing, and the attention to detail is unmatched. Highly recommended!",
+                author: "James L."
+            },
+            {
+                text: "The Swedish massage was exactly what I needed after a stressful week. The therapist was professional and the entire experience was so relaxing. I'll definitely be back!",
+                author: "Robert S."
+            }
+        ];
+
+        let currentReview = 0;
+
+        function showReview(index) {
+            const reviewContainer = document.querySelector('.review-item');
+            const review = reviews[index];
+            
+            reviewContainer.innerHTML = `
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">"${review.text}"</p>
+                <p class="review-author">— ${review.author}</p>
+            `;
+        }
+
+        // Auto-rotate reviews every 5 seconds
+        setInterval(() => {
+            currentReview = (currentReview + 1) % reviews.length;
+            showReview(currentReview);
+        }, 5000);
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!navbar.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            showReview(0);
+        });
+  const serviceData = {
+        "Aromatherapy Session - KSH 4,500": {
+            img: "images/aromatherapy.jpg",
+            video: "videos/aromatherapy.mp4",
+            description: "A soothing treatment using essential oils to relax and balance your mind and body."
+        },
+        "Hot Stone Therapy - KSH 5,200": {
+            img: "images/hotstone.jpg",
+            video: "videos/hotstone.mp4",
+            description: "Warm stones are placed on the body to relieve tension and improve circulation."
+        },
+        "Crystal Healing - KSH 3,800": {
+            img: "images/crystalhealing.jpg",
+            video: "videos/crystalhealing.mp4",
+            description: "Realign your energy fields using healing crystals to enhance overall wellness."
+        },
+        "Energy Balancing - KSH 4,000": {
+            img: "images/energybalance.jpg",
+            video: "videos/energybalance.mp4",
+            description: "A subtle energy practice to restore equilibrium in the body's energy systems."
+        },
+        "Tantric Massage (60min) - KSH 6,000": {
+            img: "images/tantric60.jpg",
+            video: "videos/tantric60.mp4",
+            description: "A deeply sensual experience designed to awaken and align your energies."
+        },
+        "Tantric Massage (90min) - KSH 8,500": {
+            img: "images/tantric90.jpg",
+            video: "videos/tantric90.mp4",
+            description: "An extended journey into relaxation and spiritual awakening through touch."
+        },
+        "Couples Tantric Session - KSH 12,000": {
+            img: "images/couples.jpg",
+            video: "videos/couples.mp4",
+            description: "A shared experience that deepens connection and intimacy between partners."
+        },
+        "Extended Tantric Experience - KSH 10,500": {
+            img: "images/extended.jpg",
+            video: "videos/extended.mp4",
+            description: "An immersive journey through all levels of tantric practice for total harmony."
+        },
+        "Swedish Massage - KSH 3,500": {
+            img: "images/swedish.jpg",
+            video: "videos/swedish.mp4",
+            description: "A classic massage style that promotes relaxation and relieves muscle tension."
+        },
+        "Deep Tissue Massage - KSH 4,200": {
+            img: "images/deeptissue.jpg",
+            video: "videos/deeptissue.mp4",
+            description: "Targets deeper layers of muscle and connective tissue to relieve chronic pain."
+        },
+        "Full Body Scrub - KSH 3,200": {
+            img: "images/scrub.jpg",
+            video: "videos/scrub.mp4",
+            description: "A rejuvenating exfoliation treatment to renew and refresh your skin."
+        },
+        "Body Wrap Treatment - KSH 4,800": {
+            img: "images/wrap.jpg",
+            video: "videos/wrap.mp4",
+            description: "Detoxify and nourish your skin with this luxurious full-body wrap."
+        },
+        "Classic Facial - KSH 2,800": {
+            img: "images/classicfacial.jpg",
+            video: "videos/classicfacial.mp4",
+            description: "Cleanse, exfoliate and moisturize with this gentle and effective facial."
+        },
+        "Anti-Aging Facial - KSH 4,500": {
+            img: "images/antiaging.jpg",
+            video: "videos/antiaging.mp4",
+            description: "Reduce fine lines and rejuvenate your skin with our advanced facial therapy."
+        },
+        "Hydrating Treatment - KSH 3,500": {
+            img: "images/hydrating.jpg",
+            video: "videos/hydrating.mp4",
+            description: "Replenish moisture and restore skin's glow with this intensive hydration session."
+        },
+        "Gold Facial Luxury - KSH 6,500": {
+            img: "images/goldfacial.jpg",
+            video: "videos/goldfacial.mp4",
+            description: "Indulge in a luxurious facial enriched with gold to revitalize and brighten skin."
+        }
+    };
+
+    document.getElementById('service').addEventListener('change', function () {
+        const selected = this.value;
+        const display = serviceData[selected];
+
+        if (display) {
+            document.getElementById('service-title').textContent = selected;
+            document.getElementById('service-image').src = display.img;
+            document.getElementById('video-source').src = display.video;
+            document.getElementById('service-video').load(); // Important to reload video
+            document.getElementById('service-description').textContent = display.description;
+
+            document.getElementById('service-image').style.display = "block";
+            document.getElementById('service-video').style.display = "block";
+        } else {
+            document.getElementById('service-title').textContent = '';
+            document.getElementById('service-image').style.display = "none";
+            document.getElementById('service-video').style.display = "none";
+            document.getElementById('service-description').textContent = '';
+        }
+    });
+
+
+    </script>
+</body>
+</html>

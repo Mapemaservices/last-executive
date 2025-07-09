@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Swedish Massage",
+    "price": 3500,
+    "description": "Relaxing full-body massage using gentle strokes.",
+    "category": "massage"
+  },
+  {
+    "id": 2,
+    "name": "Deep Tissue Massage",
+    "price": 4500,
+    "description": "Targets deeper muscle layers for tension relief.",
+    "category": "massage"
+  }
+]

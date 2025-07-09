@@ -1,0 +1,3 @@
+<!-- Use this file to provide workspace-specific custom instructions to Copilot. For more details, visit https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file -->
+
+This project is a luxury-tier, fully responsive Next.js website for Executive Gents Dollhouse, a high-end men's spa. Use modern, elegant UI patterns, gold/white/black color schemes, glassmorphism, and advanced animation libraries. Prioritize accessibility, SEO, and performance. Integrate with Telegram API, WhatsApp, Mailchimp, and Google Maps. All code should be modular, maintainable, and optimized for luxury clientele.

@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@700&family=Roboto:wght@400;500&display=swap');
+
+/* Luxury Glassmorphism & Theme */
+:root {
+  --color-gold: #D4AF37;
+  --color-black: #111111;
+  --color-white: #FFFFFF;
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.dark body {
+  background: var(--color-black);
+  color: var(--color-gold);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Animations, transitions, and utility classes will be added as needed. */

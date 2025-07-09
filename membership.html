@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Membership Application - Executive Gents</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #FFD700;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+        }
+
+        .back-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #FFD700;
+        }
+
+        /* Main Content */
+        main {
+            padding: 140px 0 80px;
+            min-height: 100vh;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 64px;
+        }
+
+        /* Form Container */
+        .form-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 48px;
+            margin-bottom: 48px;
+        }
+
+        .form-section {
+            margin-bottom: 48px;
+        }
+
+        .form-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #FFD700;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        select option {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        /* Checkbox Groups */
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+            accent-color: #FFD700;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0;
+            cursor: pointer;
+        }
+
+        /* Membership Tiers */
+        .membership-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .tier-option {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tier-option:hover {
+            border-color: #FFD700;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .tier-option.selected {
+            border-color: #FFD700;
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .tier-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .tier-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: #FFD700;
+            margin-bottom: 8px;
+        }
+
+        .tier-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .tier-features {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+        }
+
+        /* Submit Button */
+        .submit-section {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .submit-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #FFD700;
+            color: #000000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid #FFD700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .submit-button:hover {
+            background: transparent;
+            color: #FFD700;
+        }
+
+        .submit-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Privacy Notice */
+        .privacy-notice {
+            background: rgba(255, 215, 0, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            padding: 24px;
+            margin-top: 32px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .privacy-notice h4 {
+            color: #FFD700;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 48px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .form-container {
+                padding: 32px 24px;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .membership-tiers {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+
+        /* Form Validation */
+        .form-group.error input,
+        .form-group.error select,
+        .form-group.error textarea {
+            border-color: #ff4444;
+        }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .success-message {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            color: #00ff00;
+            padding: 16px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <nav>
+                <a href="#" class="logo">Executive Gents</a>
+                <a href="#" class="back-link">← Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1 class="page-title">Executive Membership Application</h1>
+            <p class="page-subtitle">Join our exclusive community of discerning professionals</p>
+
+            <form class="form-container" id="membershipForm">
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h2 class="section-title">Personal Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input type="text" id="dateOfBirth" name="dateOfBirth" placeholder="MM/DD/YYYY" required>
+                    </div>
+                </div>
+
+                <!-- Professional Information -->
+                <div class="form-section">
+                    <h2 class="section-title">Professional Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position/Title</label>
+                            <input type="text" id="position" name="position" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="industry">Industry</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select Industry</option>
+                                <option value="finance">Finance & Banking</option>
+                                <option value="technology">Technology</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="legal">Legal</option>
+                                <option value="real-estate">Real Estate</option>
+                                <option value="consulting">Consulting</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Years of Experience</label>
+                            <select id="experience" name="experience" required>
+                                <option value="">Select Experience</option>
+                                <option value="5-10">5-10 years</option>
+                                <option value="10-15">10-15 years</option>
+                                <option value="15-20">15-20 years</option>
+                                <option value="20+">20+ years</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="income">Annual Income Range</label>
+                        <select id="income" name="income" required>
+                            <option value="">Select Income Range</option>
+                            <option value="250k-500k">$250,000 - $500,000</option>
+                            <option value="500k-1m">$500,000 - $1,000,000</option>
+                            <option value="1m-2m">$1,000,000 - $2,000,000</option>
+                            <option value="2m+">$2,000,000+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Membership Tier Selection -->
+                <div class="form-section">
+                    <h2 class="section-title">Membership Tier</h2>
+                    <div class="membership-tiers">
+                        <div class="tier-option" onclick="selectTier('premium')">
+                            <input type="radio" id="premium" name="membershipTier" value="premium">
+                            <div class="tier-name">Premium</div>
+                            <div class="tier-price">$2,500/month</div>
+                            <div class="tier-features">Standard access, 24/7 support, monthly exclusive content</div>
+                        </div>
+                        <div class="tier-option" onclick="selectTier('platinum')">
+                            <input type="radio" id="platinum" name="membershipTier" value="platinum">
+                            <div class="tier-name">Platinum</div>
+                            <div class="tier-price">$5,000/month</div>
+                            <div class="tier-features">Enhanced access, priority support, weekly exclusive content, personal concierge</div>
+                        </div>
+                        <div class="tier-option" onclick="selectTier('diamond')">
+                            <input type="radio" id="diamond" name="membershipTier" value="diamond">
+                            <div class="tier-name">Diamond</div>
+                            <div class="tier-price">$10,000/month</div>
+                            <div class="tier-features">Unlimited access, dedicated account manager, daily exclusive content, custom experiences</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preferences -->
+                <div class="form-section">
+                    <h2 class="section-title">Content Preferences</h2>
+                    <label>Select your areas of interest:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="luxury" name="preferences" value="luxury">
+                            <label for="luxury">Luxury Lifestyle</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="wellness" name="preferences" value="wellness">
+                            <label for="wellness">Wellness & Spa</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="entertainment" name="preferences" value="entertainment">
+                            <label for="entertainment">Entertainment</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="exclusive" name="preferences" value="exclusive">
+                            <label for="exclusive">Exclusive Events</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="form-section">
+                    <h2 class="section-title">Additional Information</h2>
+                    <div class="form-group">
+                        <label for="referral">How did you hear about us?</label>
+                        <select id="referral" name="referral">
+                            <option value="">Select an option</option>
+                            <option value="colleague">Colleague/Friend</option>
+                            <option value="social">Social Media</option>
+                            <option value="search">Search Engine</option>
+                            <option value="advertisement">Advertisement</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Additional Comments</label>
+                        <textarea id="comments" name="comments" placeholder="Any additional information you'd like to share..."></textarea>
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <button type="submit" class="submit-button">Submit Application</button>
+                </div>
+            </form>
+
+            <div class="privacy-notice">
+                <h4>Privacy & Confidentiality</h4>
+                <p>Your information is handled with the utmost confidentiality. All personal and professional data is encrypted and stored securely. We conduct thorough background verification for all members to ensure the exclusive nature of our community. By submitting this application, you consent to our privacy policy and terms of service.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">© 2025 Executive Gents Dollhouse Exclusives. All rights reserved.</div>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function selectTier(tier) {
+            // Remove selected class from all tiers
+            document.querySelectorAll('.tier-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked tier
+            document.getElementById(tier).checked = true;
+            document.querySelector(`#${tier}`).closest('.tier-option').classList.add('selected');
+        }
+
+        // --- TELEGRAM INTEGRATION ---
+        // Replace with your bot token and chat ID
+        const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE';
+        const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID_HERE';
+
+        function sendToTelegram(message) {
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+            return fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: message,
+                    parse_mode: 'HTML'
+                })
+            });
+        }
+
+        // Form submission
+        document.getElementById('membershipForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                const formGroup = field.closest('.form-group');
+                if (!field.value.trim()) {
+                    formGroup.classList.add('error');
+                    if (!formGroup.querySelector('.error-message')) {
+                        const errorMsg = document.createElement('div');
+                        errorMsg.className = 'error-message';
+                        errorMsg.textContent = 'This field is required';
+                        formGroup.appendChild(errorMsg);
+                    }
+                    isValid = false;
+                } else {
+                    formGroup.classList.remove('error');
+                    const errorMsg = formGroup.querySelector('.error-message');
+                    if (errorMsg) {
+                        errorMsg.remove();
+                    }
+                }
+            });
+
+            // Check if membership tier is selected
+            const tierSelected = document.querySelector('input[name="membershipTier"]:checked');
+            if (!tierSelected) {
+                alert('Please select a membership tier.');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Gather form data
+                const formData = new FormData(this);
+                let preferences = [];
+                document.querySelectorAll('input[name="preferences"]:checked').forEach(cb => preferences.push(cb.value));
+                const message =
+                    `<b>New Membership Application</b>\n` +
+                    `<b>Name:</b> ${formData.get('firstName')} ${formData.get('lastName')}\n` +
+                    `<b>Email:</b> ${formData.get('email')}\n` +
+                    `<b>Phone:</b> ${formData.get('phone')}\n` +
+                    `<b>Date of Birth:</b> ${formData.get('dateOfBirth')}\n` +
+                    `<b>Company:</b> ${formData.get('company')}\n` +
+                    `<b>Position:</b> ${formData.get('position')}\n` +
+                    `<b>Industry:</b> ${formData.get('industry')}\n` +
+                    `<b>Experience:</b> ${formData.get('experience')}\n` +
+                    `<b>Income:</b> ${formData.get('income')}\n` +
+                    `<b>Membership Tier:</b> ${formData.get('membershipTier')}\n` +
+                    `<b>Preferences:</b> ${preferences.join(', ') || 'None'}\n` +
+                    `<b>Referral:</b> ${formData.get('referral')}\n` +
+                    `<b>Comments:</b> ${formData.get('comments')}`;
+                try {
+                    await sendToTelegram(message);
+                } catch (err) {
+                    alert('Failed to send application to Telegram.');
+                }
+                // Show success message
+                const successMsg = document.createElement('div');
+                successMsg.className = 'success-message';
+                successMsg.textContent = 'Application submitted successfully. You will receive a confirmation email within 24 hours.';
+                this.insertBefore(successMsg, this.firstChild);
+                
+                // Disable submit button
+                const submitBtn = this.querySelector('.submit-button');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Application Submitted';
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+        });
+
+        // Remove error styling on input
+        document.querySelectorAll('input, select, textarea').forEach(field => {
+            field.addEventListener('input', function() {
+                const formGroup = this.closest('.form-group');
+                formGroup.classList.remove('error');
+                const errorMsg = formGroup.querySelector('.error-message');
+                if (errorMsg) {
+                    errorMsg.remove();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
